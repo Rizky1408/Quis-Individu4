@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="rizky14"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-10-31 09:45:25 PM"/>
+        <attribute name="created" value="cml6a3kxNDsxNDsyMDIxLTEwLTMxOzA3OjIwOjM0IFBNOzIwNDE="/>
+        <attribute name="edited" value="cml6a3kxNDsxNDsyMDIxLTEwLTMxOzA5OjQ1OjI1IFBNOzI7MjE1OQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="volume, debit, waktu" type="Real" array="False" size=""/>
+            <declare name="pilihan" type="Integer" array="False" size=""/>
+            <output expression="&quot;1. Berapa cm3/ detik debit anutan pipa air tersebut?&quot;" newline="True"/>
+            <output expression="&quot;2. Berapa liter/detik debit air&#13;&#10;yang keluar dari pipa tersebut?&quot;" newline="True"/>
+            <output expression="&quot;3. Berapa&#13;&#10;banyak air yang bisa dipindahkan air terjun tersebut dalam waktu 10 menit?&quot;" newline="True"/>
+            <output expression="&quot;Masukan Pilihan :&quot;" newline="True"/>
+            <input variable="pilihan"/>
+            <if expression="pilihan == 1">
+                <then>
+                    <assign variable="volume" expression="125 * 1000"/>
+                    <assign variable="waktu" expression="50 * 60"/>
+                    <output expression="&quot;Debit air adalah &quot; &amp;hitungDebit(volume,waktu) &amp;&quot; cm3/detik&quot;" newline="True"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="pilihan == 2">
+                <then>
+                    <assign variable="volume" expression="40 * 1000"/>
+                    <assign variable="waktu" expression="4 * 3600"/>
+                    <output expression="&quot;Debit aii yang keluar dari pipa &quot; &amp;hitungDebit(volume,waktu)&amp;&quot; liter/detik&quot;" newline="True"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="pilihan == 3">
+                <then>
+                    <assign variable="debit" expression="80"/>
+                    <assign variable="waktu" expression="10 * 60"/>
+                    <output expression="&quot;Volumenya adalah &quot; &amp;HitungVolume(debit,waktu)&amp; &quot; m3&quot;" newline="True"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+    <function name="hitungDebit" type="Real" variable="debit">
+        <parameters>
+            <parameter name="volume" type="Real" array="False"/>
+            <parameter name="waktu" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="debit" type="Real" array="False" size=""/>
+            <assign variable="debit" expression="volume/waktu"/>
+        </body>
+    </function>
+    <function name="hitungVolume" type="Integer" variable="volume">
+        <parameters>
+            <parameter name="debit" type="Integer" array="False"/>
+            <parameter name="waktu" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="volume" type="Integer" array="False" size=""/>
+            <assign variable="volume" expression="debit * waktu"/>
+        </body>
+    </function>
+</flowgorithm>
